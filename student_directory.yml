@@ -1,0 +1,73 @@
+--- !ruby/object:Student
+name: Johnny
+email: johnnybowman@gmail.com
+twitter: johnbowmanjr
+fun_fact: i have a twin
+reason_for_joining: chicks
+--- !ruby/object:Student
+name: Joaquin
+email: gamboanj@gmail
+twitter: joaquinnj
+fun_fact: im a magician
+--- !ruby/object:Student
+name: asdf
+email: df
+twitter: df
+fun_fact: df
+reason_for_joining: d
+--- 
+...
+--- 
+...
+--- 
+...
+--- 
+...
+--- 
+...
+--- 
+...
+--- !ruby/object:Student
+name: ''
+email: ''
+twitter: ''
+fun_fact: ''
+reason_for_joining: ''
+--- !ruby/object:Student
+name: Joaquin
+email: sldfj
+twitter: s
+fun_fact: s
+reason_for_joining: s
+--- 
+...
+--- 
+...
+--- !ruby/object:Student
+name: s
+email: s
+twitter: s
+fun_fact: s
+reason_for_joining: s
+--- !ruby/object:Student
+name: s
+email: s
+twitter: s
+fun_fact: ''
+reason_for_joining: ''
+--- !ruby/object:Student
+name: ''
+email: d
+twitter: d
+fun_fact: d
+reason_for_joining: d
+--- !ruby/object:Student
+reason_for_joining: s
+--- !ruby/object:Student
+reason_for_joining: s
+--- 
+...
+--- !ruby/object:Student
+reason_for_joining: s
+--- !ruby/object:Student
+reason_for_joining: s
