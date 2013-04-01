@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'yaml'
+require 'pry'
 
 
 class Person
@@ -10,8 +11,8 @@ class Person
   attr_accessor :fun_fact
 
   #creates an instance of person type
-  def create_person(type)
-    case type
+  def self.create_person(person)
+    case person
     when "Student"
       Student.new
     when "Instructor"
@@ -20,6 +21,7 @@ class Person
       nil
     end
   end
+
 
   def initialize
     print "What is your name? "
@@ -42,6 +44,7 @@ class Student < Person
 
   def initialize
     #First executes method in super class
+    super
     print "What was your reasoning for joining WDI "
     self.reason_for_joining = gets.strip.chomp
   end
@@ -52,25 +55,30 @@ class Instructor < Person
 
   def initialize
     #First executes method in super class
+    super
     print "What type of instructor "
     self.type = gets.strip.chomp
   end
 end
 
-@directory = ""
+@directory = []
 puts "Student Directory, v0.0.1 by Dan Garland"
 print "Enter Student or Instructor, q to save and quit: "
 
 while ((input = gets.strip.chomp) != 'q') do
+  if input == "l"
+    @directory << YAML.load_documents(File.open('student_directory.yml'))
+    binding.pry
+  end
 
-  #create instance of the person class to be added in t
-  person = Person.new.create_person(input)
-
-  @directory += person.to_yaml
-  puts @directory
-  
-  print "Enter Student or Instructor, q to save and quit: "
+    #create instance of the person class to be added in t
+    person = Person.create_person(input)
+    
+    print "Enter Student or Instructor, q to save and quit: "
 end
-
-# Open a student_directory.yml YAML file and write it out on one line
-File.open('student_directory.yml', 'a') { |f| f.write(@directory) } 
+# Save people to a YAML file
+File.open('student_directory.yml', 'a') { |f| 
+  @directory.compact.each do |person|
+    f.write(person.to_yaml)
+end 
+}
