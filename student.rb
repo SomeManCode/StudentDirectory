@@ -68,7 +68,6 @@ print "Enter Student or Instructor, q to save and quit: "
 while ((input = gets.strip.chomp) != 'q') do
   if input == "l"
     @directory << YAML.load_documents(File.open('student_directory.yml'))
-    binding.pry
   end
 
     #create instance of the person class to be added in t
